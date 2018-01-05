@@ -66,6 +66,7 @@
 	<modules>
 		<module>mqtt-travel</module>
 		<module>mqtt-gateway</module>
+		<module>mqtt-action</module>
 	</modules>
 
 </project>
