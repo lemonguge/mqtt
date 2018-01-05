@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="http://www.springframework.org/schema/beans"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+
+	<int:channel id="helloServiceReplyChannel"/>
+
+	<int:service-activator input-channel="helloServiceReplyChannel" ref="helloServiceImpl" method="hello"/>
+
+	<int:gateway id="helloServiceGateway" service-interface="cn.homjie.spring.boot.mqtt.service.HelloService"
+				 default-request-channel="helloServiceReplyChannel"/>
+
+</beans>
